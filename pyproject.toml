@@ -1,0 +1,18 @@
+[project]
+name = "material-color-palette"
+version = "1.0.0"
+description = "A reverse engineered library for generating a custom Material Design color palette."
+authors = [
+    { name = "David Hamm" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

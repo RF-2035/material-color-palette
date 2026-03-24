@@ -1,28 +1,30 @@
 # Material Design Color Palette Generator
 
-A reverse engineered library for generating a custom Material Design color palette. The original tool can be
+A reverse engineered library for generating a custom Material Design color palette, [Hammwerk/material-color-palette](https://github.com/Hammwerk/material-color-palette "Hammwerk/material-color-palette"), ported to Python. The original tool can be
 seen [here](https://material.io/design/color/the-color-system.html#tools-for-picking-colors "Google's palette generation tool")
 
 ![Example palettes](example-palettes.png "Example palettes")
 
 ## Color Palette Generation
 
-The algorithm to generate a Material Design color palette is entirely written in Kotlin and can be used in Android and
-on the JVM. It is exactly the same as the algorithm that is used in [Google's palette generation tool](
+The algorithm to generate a Material Design color palette is ported from the original Kotlin implementation. It is exactly the same as the algorithm that is used in [Google's palette generation tool](
 https://material.io/design/color/the-color-system.html#tools-for-picking-colors "Google's palette generation tool").
 
 ## Usage
 
-```kotlin
-val customPalette: List<RgbColor> = "F44336".toRgbColorOrNull()!!.createPalette()
+```python
+from material_color_palette import create_palette
+
+custom_palette = create_palette("F44336")
+print(custom_palette)
 ```
 
 produces the following color palette:
 
 ![Red palette](red-palette.png "Red palette")
 
-```kotlin
-listOf(
+```python
+[
     "FFEBEE",
     "FFCDD2",
     "EF9A9A",
@@ -33,17 +35,23 @@ listOf(
     "D32F2F",
     "C62828",
     "B71B1C"
-)
+]
 ```
 
-### Gradle
+## Installation
 
-Declare the dependency to this library in your gradle-project.
+You can install this package locally:
 
-```kotlin
-dependencies {
-    implementation("de.hammwerk:material-color-palette:1.0.0")
-}
+```bash
+pip install .
+```
+
+## Development
+
+Run tests using pytest:
+
+```bash
+pytest
 ```
 
 ## License
